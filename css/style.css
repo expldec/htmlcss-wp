@@ -35,6 +35,10 @@ html {
     content: '';
 }
 
+img {
+    width: 100%;
+}
+
 /* HEADER */
 /* header {
     height: 5rem;
@@ -105,31 +109,56 @@ Gli diciamo di non superare in larghezza il 60% del suo genitore, e in più sett
     margin-bottom: 0.5rem;
 }
 
-main div {
-    background-color: #abcfe7;
+/* tutti i p dentro main avranno testo di questo colore  */
+main p {
+    color: grey;
 }
 
+/* diamo un'altezza fissa alle immagini e un object-fit cover per non distorcerle */
+main img {
+    height: 10rem;
+    object-fit: cover;
+}
+
+/* Stilizzazione del div orizzontale sopra le colonne */
 main .top {
-    height: 4rem;
     margin-bottom: 1rem;
 }
 
-
-main .left,
-main .right,
-main .center {
-    height: 10rem;
-    float: left;
+.top h2 {
+    font-size: 2rem;
 }
 
-main .left,
-main .right {
+/* Stilizzazione delle colonne */
+
+.column {
+    float: left;
+    position: relative;
+}
+
+.column.left,
+.column.right {
     width: 20%;
 }
 
-main .center {
+.column.center {
     width: calc(60% - 2rem);
     margin: 0 1rem;
+}
+
+
+/* Stilizzazione dei contenuti delle colonne */
+.column .imgbox {
+    border-radius: 1em;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+.column h2 {
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
 footer {
