@@ -17,7 +17,7 @@ html {
 
 .container {
     width: 80%;
-    margin: 2% auto;
+    margin: 0 auto;
 }
 
 .container > * {
@@ -122,11 +122,12 @@ main img {
 
 /* Stilizzazione del div orizzontale sopra le colonne */
 main .top {
-    margin-bottom: 1rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
 }
 
 .top h2 {
-    font-size: 2rem;
+    font-size: 2.5rem;
 }
 
 /* Stilizzazione delle colonne */
@@ -161,7 +162,15 @@ main .top {
     margin-bottom: 1rem;
 }
 
+/* Footer */
+
 footer {
-    background-color: #8801fe;
     height: 3rem;
+    line-height: 3rem;
+    text-align: center;
+}
+
+#hearts {
+    font-size: 1.2em;
+    color: red;
 }
