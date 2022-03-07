@@ -20,10 +20,20 @@ html {
     margin: 2% auto;
 }
 
-.container * {
+.container > * {
+    position: relative;
     margin-bottom: 1rem;
 }
 
+.with-overlay::before {
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    content: '';
+}
 
 /* HEADER */
 /* header {
@@ -35,6 +45,10 @@ header img {
     width: 10em;
     border-right: 1px solid black;
     padding-right: 1em;
+}
+
+header nav {
+    margin-top: 1em;
 }
 
 header li {
@@ -50,13 +64,44 @@ header a {
     color: inherit;
 }
 
+/* JUMBOTRON */
+
+/* Diamo al jumbotron un position relative, così possiamo piazzare il testo al suo interno con un position absolute */
+/* Gli diamo un'altezza fissa, un border radius, un'immagine di sfondo dimensionata e centrata come piace a noi  */
+/* inifne gli mettiamo un overflow hidden così l'overlay rispetta i confini del border radius */
 .jumbotron {
-    background-color: #e1d67a;
-    height: 20rem;
+    /* background-color: #e1d67a; */
+    position: relative;
+    height: 24rem;
+    border-radius: 1em;
+    background-image: url(../img/banner.jpg);
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
 }
 
+/* Diamo al div con il testo dentro al Jumbotron un position absolute e lo piazziamo come vogliamo
+Gli diciamo di non superare in larghezza il 60% del suo genitore, e in più settiamo il colore del testo */
+.jumbotron .herotext {
+    position: absolute;
+    bottom: 3rem;
+    left: 2rem;
+    width: 60%;
+    color: white;
+}
+
+/* un po' di stilizzazione al testo nel nostro jumbotron  */
+.herotext h2 {
+    font-weight: 400;
+    font-size: 1.5rem;
+}
+.herotext p {
+    font-size: 0.8rem;
+}
+
+
+/* MAIN */
 .container main {
-    background-color: #0186fe;
     margin-bottom: 0.5rem;
 }
 
